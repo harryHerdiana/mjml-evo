@@ -1,7 +1,47 @@
-.red {
-  color: red;
+.body{
+ height: 100%;
 }
 
-.blue {
-  color: blue;
+.header{
+  background-color: #012B3C;
+  height: 234px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.header > table{
+  height: 100%;
+}
+
+.content{
+ height: 670px;
+ background-color: #fff;
+ border-bottom-left-radius: 12px;
+ border-bottom-right-radius: 12px;
+ margin: auto;
+}
+
+.image{
+  height: 49px;
+}
+
+.image-container{
+  height: 100%;
+  display: flex;
+}
+
+.content-container{
+  margin: auto;
+  height: 478px;
+  transform: translateY(-32px);
+  border-radius: 12px;
+
+}
+
+.content-container > div{
+  display: flex !important;
+  background-color: white;
+  border-radius: var(--Radius-lg, 12px);
+  background: var(--Grey-White, #FFF);
+  box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.08);
 }

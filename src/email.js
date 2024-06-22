@@ -1,67 +1,53 @@
-import React from 'react';
-import { readFileSync } from 'fs';
+import { readFileSync } from "fs";
+import React from "react";
 
 import {
   Mjml,
-  MjmlHead,
-  MjmlTitle,
-  MjmlPreview,
   MjmlBody,
-  MjmlSection,
-  MjmlColumn,
   MjmlButton,
+  MjmlColumn,
+  MjmlHead,
   MjmlImage,
+  MjmlPreview,
+  MjmlSection,
   MjmlStyle,
-  MjmlText
-} from 'mjml-react';
+  MjmlTitle,
+} from "mjml-react";
 
-const css = readFileSync('./assets/styles.css').toString();
+const css = readFileSync("./assets/styles.css").toString();
 
 export const generate = () => {
-  return (
-    <Mjml>
-      <MjmlHead>
-        <MjmlTitle>Last Minute Offer</MjmlTitle>
-        <MjmlPreview>Last Minute Offer...</MjmlPreview>
-        <MjmlStyle>{css}</MjmlStyle>
-        <MjmlStyle>{`
-          .blue-column {
-            background-color: blue;
-          }
-        `}</MjmlStyle>
-        <MjmlStyle inline>{`
-          .red-column {
-            background-color: red;
-          }
-        `}</MjmlStyle>
-      </MjmlHead>
-      <MjmlBody width={500}>
-        <MjmlSection fullWidth backgroundColor="#efefef">
-          <MjmlColumn>
-            <MjmlImage src="https://static.wixstatic.com/media/5cb24728abef45dabebe7edc1d97ddd2.jpg" />
-          </MjmlColumn>
-        </MjmlSection>
-        <MjmlSection>
-          <MjmlColumn>
-            <MjmlButton padding="20px" backgroundColor="#346DB7" href="https://www.wix.com/">
-              I like it!
-            </MjmlButton>
-          </MjmlColumn>
-        </MjmlSection>
-        <MjmlSection>
-          <MjmlColumn cssClass="blue-column">
-            <MjmlText>I am blue</MjmlText>
-          </MjmlColumn>
-          <MjmlColumn cssClass="red-column">
-            <MjmlText>I am red</MjmlText>
-          </MjmlColumn>
-        </MjmlSection>
-        <MjmlSection>
-          <MjmlColumn>
-            <MjmlText><a href="/2">Open Second Template</a></MjmlText>
-          </MjmlColumn>
-        </MjmlSection>
-      </MjmlBody>
-    </Mjml>
-  );
+    return (
+        <Mjml>
+            <MjmlHead>
+                <MjmlTitle>Evo Email</MjmlTitle>
+                <MjmlPreview>Evo Email Template</MjmlPreview>
+                <MjmlStyle>{css}</MjmlStyle>
+            </MjmlHead>
+            <MjmlBody width={640} backgroundColor="#efefef" cssClass="body">
+                <MjmlSection fullWidth padding={0} paddingTop={16}>
+                    <MjmlColumn cssClass="header">
+                        <MjmlImage
+                            width={112}
+                            mjClass="image"
+                            src="https://dev.evo-catalogue.pages.dev/_next/static/media/logo.c08bfe67.svg"
+                        />
+                    </MjmlColumn>
+                </MjmlSection>
+                <MjmlSection padding={0}>
+                    <MjmlColumn cssClass="content">
+                        <MjmlColumn cssClass="content-container"  width={450}>
+                            <MjmlButton
+                                padding="20px"
+                                backgroundColor="#346DB7"
+                                href="https://www.wix.com/"
+                            >
+                                I like it!
+                            </MjmlButton>
+                        </MjmlColumn>
+                    </MjmlColumn>
+                </MjmlSection>
+            </MjmlBody>
+        </Mjml>
+    );
 };
